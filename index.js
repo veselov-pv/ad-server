@@ -19,8 +19,6 @@ app.get('/db', function (request, response) {
 	});
 });
 
-/*  {"ads":[],"version":"v0.2.440","session":{"si":"kwlrkrxf","beacons":{}}}  */
-
 function formatAdData(sqlString) {
 	return {
 		'ads': JSON.parse(sqlString),
@@ -31,7 +29,7 @@ function formatAdData(sqlString) {
 		}
 	};
 }
-
+/*
 app.get('/ad-data', function (request, response) {
 	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
 		client.query('SELECT * FROM ad_data_table', function (err, result) {
@@ -45,7 +43,7 @@ app.get('/ad-data', function (request, response) {
 			}
 		});
 	});
-});
+});*/
 
 app.listen(app.get('port'), function () {
 	console.log("Node app is running at localhost:" + app.get('port'))
