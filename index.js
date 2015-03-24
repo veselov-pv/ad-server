@@ -29,7 +29,7 @@ function formatAdData(sqlString) {
 		}
 	};
 }
-app.get('/ad-data', function (request, response) {
+app.get('/ad_data', function (request, response) {
 	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
 		client.query('SELECT * FROM ad_data_table', function (err, result) {
 			done();
