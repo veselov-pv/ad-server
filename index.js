@@ -24,8 +24,8 @@ function getData(){
 	};
 }
 
-app.get('data', function (request, response) {
-	response.send(JSON.stringify(formatedData));
+app.get('/data', function (request, response) {
+	response.send(JSON.stringify(getData()));
 });
 
 app.use('/images', express.static('images'));
