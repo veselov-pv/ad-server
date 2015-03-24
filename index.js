@@ -4,7 +4,7 @@ var pg = require('pg');
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/db', function (request, response) {
+/*app.get('/db', function (request, response) {
 	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
 		client.query('SELECT * FROM ad_data_table', function (err, result) {
 			done();
@@ -17,7 +17,7 @@ app.get('/db', function (request, response) {
 			}
 		});
 	});
-});
+});*/
 
 function formatAdData(sqlString) {
 	return {
@@ -29,7 +29,6 @@ function formatAdData(sqlString) {
 		}
 	};
 }
-/*
 app.get('/ad-data', function (request, response) {
 	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
 		client.query('SELECT * FROM ad_data_table', function (err, result) {
@@ -43,7 +42,7 @@ app.get('/ad-data', function (request, response) {
 			}
 		});
 	});
-});*/
+});
 
 app.listen(app.get('port'), function () {
 	console.log("Node app is running at localhost:" + app.get('port'))
