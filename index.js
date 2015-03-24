@@ -1,7 +1,4 @@
 var express = require('express');
-var fs = require('fs');
-var url = require('url');
-
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -27,7 +24,7 @@ function getData(){
 	};
 }
 
-app.get('ad-data', function (request, response) {
+app.get('data', function (request, response) {
 	response.send(JSON.stringify(formatedData));
 });
 
