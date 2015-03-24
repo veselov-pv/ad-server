@@ -1,27 +1,24 @@
 var express = require('express');
+var fs = require('fs');
+var url = require('url');
+
 var app = express();
-var pg = require('pg');
 
 app.set('port', (process.env.PORT || 5000));
 
-/*app.get('/db', function (request, response) {
-	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-		client.query('SELECT * FROM ad_data_table', function (err, result) {
-			done();
-			if (err) {
-				console.error(err);
-				response.send("Error " + err);
-			}
-			else {
-				response.send(result.rows);
-			}
-		});
-	});
-});*/
-
-function formatAdData(sqlString) {
+function getData(){
 	return {
-		'ads': JSON.parse(sqlString),
+		'ads': [
+			{
+				"click_url":"https://http://spherical-cow.herokuapp.com/click",
+				"image_url":"https://http://spherical-cow.herokuapp.com/images/image1.jpg",
+				"ad_like":"https://http://spherical-cow.herokuapp.com/ad_like",
+				"ad_dislike":"https://http://spherical-cow.herokuapp.com/ad_dislike",
+				"ad_hide":"https://http://spherical-cow.herokuapp.com/ad_hide",
+				"ad_share":"https://http://spherical-cow.herokuapp.com/ad_share",
+				"inbox_open":"https://http://spherical-cow.herokuapp.com/inbox_open"
+			}
+		],
 		'version': "v0.2.440",
 		'session': {
 			'si': 'kwlrkrxf',
@@ -29,20 +26,12 @@ function formatAdData(sqlString) {
 		}
 	};
 }
-app.get('/ad_data', function (request, response) {
-	pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-		client.query('SELECT * FROM ad_data_table', function (err, result) {
-			done();
-			if (err) {
-				console.error(err);
-				response.send(JSON.stringify({error: err}));
-			} else {
-				var formatedData = formatAdData(result.rows);
-				response.send(JSON.stringify(formatedData));
-			}
-		});
-	});
+
+app.get('ad-data', function (request, response) {
+	response.send(JSON.stringify(formatedData));
 });
+
+app.use('/images', express.static('images'));
 
 app.listen(app.get('port'), function () {
 	console.log("Node app is running at localhost:" + app.get('port'))
