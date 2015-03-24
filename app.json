@@ -1,0 +1,6 @@
+{
+  "name": "Ad server (Node.js, PostgerSQL)",
+  "repository": "https://github.com/veselov-pv/ad-server.git",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static", "postgre", "sql", "ad"]
+}
