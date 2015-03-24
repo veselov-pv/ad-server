@@ -30,6 +30,10 @@ app.get('/data', function (request, response) {
 
 app.use('/images', express.static('images'));
 
+app.use('/service-img', express.static('service-img'));
+
+app.use('/app', express.static('ad-site'));
+
 app.listen(app.get('port'), function () {
 	console.log("Node app is running at localhost:" + app.get('port'))
 });

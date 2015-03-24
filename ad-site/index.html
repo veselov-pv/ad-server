@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Ad</title>
+	<link rel="stylesheet" href="style/main.css"/>
+	<script src="js/main.js"></script>
+</head>
+<body>
+<div class="ad-content flex-cont">
+	<div class="panel download flex-cont flex-vert flex-1">
+		<div class="header flex-cont hidden">
+			<div class="flex-1"></div>
+			<div class="header-title flex-cont">
+				<div class="header-text">Powered by</div>
+				<div class="header-logo"></div>
+			</div>
+			<div class="flex-1 flex-cont">
+				<div class="flex-1"></div>
+				<div class="btn close"></div>
+			</div>
+		</div>
+		<div class="banner flex-1 flex-cont flex-vert">
+			<div class="flex-1 flex-cont flex-vert all-centering">
+				<div class="spinner"></div>
+
+				<div class="image-wrapper flex-1 hidden">
+					<img src="" class="image"/>
+					<img src="" class="image-mirror"/>
+					<svg height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" baseProfile="full">
+						<mask id="fade_down_svg_mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+							<linearGradient id="fade_down_svg_gradient" gradientUnits="objectBoundingBox" x2="0" y2="1">
+								<stop stop-color="white" stop-opacity="0" offset="0.5"></stop>
+								<stop stop-color="white" stop-opacity="1" offset="1"></stop>
+							</linearGradient>
+							<rect x="0" y="0" width="1" height="1" fill="url(#fade_down_svg_gradient)"></rect>
+						</mask>
+					</svg>
+				</div>
+
+				<div class="download-btn-wrapper flex-cont hidden">
+					<div class="btn download flex-1 flex-cont all-centering">Download Now</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel social flex-cont">
+		<div class="btn like flex-1 flex-cont flex-vert all-centering">
+			<div class="icon"></div>
+			<div>like</div>
+		</div>
+		<div class="btn dislike flex-1 flex-cont flex-vert all-centering">
+			<div class="icon"></div>
+			<div>dislike</div>
+		</div>
+		<div class="btn stop flex-1 flex-cont flex-vert all-centering">
+			<div class="icon"></div>
+			<div>stop</div>
+		</div>
+		<div class="btn share flex-1 flex-cont flex-vert all-centering">
+			<div class="icon"></div>
+			<div>share</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
