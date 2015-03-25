@@ -1,8 +1,11 @@
-(function ($$) {
-	var d, header, banner, spinner, imageWr, image, imageMirror, downloadBtnWr, currOrientation;
+(function () {
+	var content, header, closeBtn, spinner, imageWr, image, imageMirror,
+		downloadBtnWr, downloadBtn, currOrientation, likeBtn, dislikeBtn,
+		hideBtn, shareBtn, baseData;
 	var PORTRAIT = 'portrait';
 	var LANDSCAPE = 'landscape';
-	var BASE_URL = 'http://spherical-cow.herokuapp.com/data';
+	var BASE_URL = 'https://spherical-cow.herokuapp.com/data';
+	var isElementsInited = false;
 
 	function addClass(o, c) {
 		var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
@@ -26,32 +29,45 @@
 		}
 	}
 
+	function onImageLoad(event) {
+		event = event || window.event;
+		var img = event.target;
+		addClass(spinner, 'hidden');
+		image.src = img.src;
+		imageMirror.src = img.src;
+		removeClass(header, 'hidden');
+		removeClass(imageWr, 'hidden');
+		removeClass(downloadBtnWr, 'hidden');
+		checkImageDefiningSize();
+		sendGetRequest(baseData.ads[0].inbox_open);
+	}
+
 	function getNewImage() {
-		setTimeout(function () {
-			var img;
-			img = d.createElement('img');
-			img.onload = function (event) {
-				addClass(spinner, 'hidden');
-				image.src = img.src;
-				imageMirror.src = img.src;
-				removeClass(header, 'hidden');
-				removeClass(imageWr, 'hidden');
-				removeClass(downloadBtnWr, 'hidden');
-				checkImageDefiningSize();
-			};
-			img.src = 'http://image.rakuten.co.jp/kaminorth/cabinet/bicycle01/img60923459.jpg?_ex=128x128';
-		}, 3000);
+		var img = d.createElement('img');
+		img.onload = onImageLoad;
+		img.src = baseData.ads[0].image_url;
+	}
+
+	function onElementsInitFinish() {
 	}
 
 	function initElements() {
-		d = document;
-		header = $$('.header')[0];
-		banner = $$('.banner')[0];
-		spinner = $$('.spinner')[0];
-		imageWr = $$('.image-wrapper')[0];
-		image = $$('.image')[0];
-		imageMirror = $$('.image-mirror')[0];
-		downloadBtnWr = $$('.download-btn-wrapper')[0];
+		content = document.querySelector('#ad-content');
+		var $get = content.querySelector.bind(content);
+		header = $get('.header');
+		closeBtn = $get('.btn.close');
+		spinner = $get('.spinner');
+		imageWr = $get('.image-wrapper');
+		image = $get('.image');
+		imageMirror = $get('.image-mirror');
+		downloadBtnWr = $get('.download-btn-wrapper');
+		downloadBtn = $get('.btn.download');
+		likeBtn = $get('.btn.like');
+		dislikeBtn = $get('.btn.like');
+		hideBtn = $get('.btn.like');
+		shareBtn = $get('.btn.like');
+		isElementsInited = true;
+		onElementsInitFinish();
 	}
 
 	/* redundant */
@@ -68,35 +84,75 @@
 		setCurrentOrientation(checkOrientation(mql));
 	}
 
-	function initOrientationWatcher() {
+	function initOrientationListener() {
 		var mql = window.matchMedia('(orientation: ' + PORTRAIT + ')');
 		mql.addListener(onScreenOrientationChange);
 		setCurrentOrientation(checkOrientation(mql));
 	}
 
-	function initWatchers() {
-		initOrientationWatcher();
+	function removeAllElements() {
+		if (content) content.parentNode.removeChild(content);
+	}
+
+	function redirectToAdSite() {
+		window.location.href = baseData.ads[0].click_url;
+	}
+
+	function initListeners() {
+		initOrientationListener();
+		closeBtn.onclick = removeAllElements;
+		image.onclick = redirectToAdSite;
+		downloadBtn.onclick = redirectToAdSite;
+		likeBtn.onclick = function () {
+			sendGetRequest(baseData.ads[0].ad_like);
+		};
+		dislikeBtn.onclick = function () {
+			sendGetRequest(baseData.ads[0].ad_dislike);
+		};
+		hideBtn.onclick = function () {
+			sendGetRequest(baseData.ads[0].ad_hide);
+		};
+		shareBtn.onclick = function () {
+			sendGetRequest(baseData.ads[0].ad_share);
+		};
 	}
 
 	function sendGetRequest(url, callback) {
 		var xhr = new XMLHttpRequest();
 
 		xhr.onreadystatechange = function () {
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				callback(xhr);
-			}
+			if (xhr.readyState !== 4 || xhr.status !== 200) return;
+			if (typeof callback == 'function') callback(xhr);
 		};
 		xhr.open("GET", url, true);
 		xhr.send();
 	}
 
-	window.onload = function () {
-		initElements();
-		initWatchers();
-		getNewImage();
-	};
+	function sendInitialRequest() {
 
-	sendGetRequest(BASE_URL, function (xhr) {
-		console.log(xhr);
-	});
-})(document.querySelectorAll.bind(document));
+		function isJsonString(str) {
+			try {
+				JSON.parse(str);
+			} catch (e) {
+				return false;
+			}
+			return true;
+		}
+
+		sendGetRequest(BASE_URL, function (xhr) {
+			if (!isJsonString(xhr.responseText)) return;
+			baseData = JSON.parse(xgr.responseText);
+			if (isElementsInited === true) {
+				getNewImage();
+			} else {
+				onElementsInitFinish = getNewImage;
+			}
+		});
+	}
+
+	window.onload = function () {
+		sendInitialRequest();
+		initElements();
+		initListeners();
+	};
+})();

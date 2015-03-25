@@ -158,6 +158,7 @@ html, body, .ad-content {
 	margin-right: 1.5vmin;
 	background: url(../img/close-icon.png) no-repeat 0 0;
 	background-size: 100%;
+	cursor: pointer;
 }
 
 .banner {
@@ -208,6 +209,7 @@ html, body, .ad-content {
 
 .image {
 	bottom: 0;
+	cursor: pointer;
 }
 
 .image-mirror {
@@ -278,6 +280,7 @@ html, body, .ad-content {
 	-moz-box-shadow:    0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
 	box-shadow:         0 1.5vm 1.5vm rgba(50, 50, 50, 0.5);
 	box-shadow:         0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
+	cursor: pointer;
 }
 
 .panel.social {
@@ -332,6 +335,7 @@ html, body, .ad-content {
 	font-size: 4vm;
 	font-size: 4vmin;
 	color: transparent;
+	cursor: pointer;
 }
 
 .btn .icon {
