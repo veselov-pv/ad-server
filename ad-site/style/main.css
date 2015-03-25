@@ -248,7 +248,7 @@ html, body, .ad-content {
 }
 
 .btn.download {
-	z-index: 2
+	z-index: 2;
 
 	-webkit-align-self: stretch;
 	-moz-align-self: stretch;
