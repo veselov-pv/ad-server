@@ -296,10 +296,12 @@ html, body, .ad-content {
 	height: 9vm;
 	height: 9vmin;
 	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 0 0;
 }
 
 .like .icon, .dislike .icon {
-	background: url(../img/like-icon.png) no-repeat 0 0;
+	background-image: url(../img/like-icon.png);
 }
 
 .dislike .icon {
@@ -311,9 +313,9 @@ html, body, .ad-content {
 }
 
 .stop .icon {
-	background: url(../img/stop-icon.png) no-repeat 0 0;
+	background-image: url(../img/stop-icon.png);
 }
 
 .share .icon{
-	background: url(../img/share-icon.png) no-repeat 0 0;
+	background-image: url(../img/share-icon.png);
 }
