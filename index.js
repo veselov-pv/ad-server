@@ -7,13 +7,13 @@ function getData(){
 	return {
 		'ads': [
 			{
-				"click_url":"https://http://spherical-cow.herokuapp.com/click",
-				"image_url":"https://http://spherical-cow.herokuapp.com/images/image1.jpg",
-				"ad_like":"https://http://spherical-cow.herokuapp.com/ad_like",
-				"ad_dislike":"https://http://spherical-cow.herokuapp.com/ad_dislike",
-				"ad_hide":"https://http://spherical-cow.herokuapp.com/ad_hide",
-				"ad_share":"https://http://spherical-cow.herokuapp.com/ad_share",
-				"inbox_open":"https://http://spherical-cow.herokuapp.com/inbox_open"
+				"click_url":"https://spherical-cow.herokuapp.com/click",
+				"image_url":"https://spherical-cow.herokuapp.com/images/image1.jpg",
+				"ad_like":"https://spherical-cow.herokuapp.com/ad_like",
+				"ad_dislike":"https://spherical-cow.herokuapp.com/ad_dislike",
+				"ad_hide":"https://spherical-cow.herokuapp.com/ad_hide",
+				"ad_share":"https://spherical-cow.herokuapp.com/ad_share",
+				"inbox_open":"https://spherical-cow.herokuapp.com/inbox_open"
 			}
 		],
 		'version': "v0.2.440",
