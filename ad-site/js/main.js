@@ -141,7 +141,7 @@
 
 		sendGetRequest(BASE_URL, function (xhr) {
 			if (!isJsonString(xhr.responseText)) return;
-			baseData = JSON.parse(xgr.responseText);
+			baseData = JSON.parse(xhr.responseText);
 			if (isElementsInited === true) {
 				getNewImage();
 			} else {
