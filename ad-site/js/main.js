@@ -1,7 +1,7 @@
 (function () {
 	var content, header, closeBtn, spinner, imageWr, image, imageMirror,
 		downloadBtnWr, downloadBtn, currOrientation, likeBtn, dislikeBtn,
-		hideBtn, shareBtn, baseData;
+		stopBtn, shareBtn, baseData;
 	var PORTRAIT = 'portrait';
 	var LANDSCAPE = 'landscape';
 	var BASE_URL = 'http://spherical-cow.herokuapp.com/data';
@@ -65,9 +65,9 @@
 		downloadBtnWr = $get('.download-btn-wrapper');
 		downloadBtn = $get('.btn.download');
 		likeBtn = $get('.btn.like');
-		dislikeBtn = $get('.btn.like');
-		hideBtn = $get('.btn.like');
-		shareBtn = $get('.btn.like');
+		dislikeBtn = $get('.btn.dislike');
+		stopBtn = $get('.btn.stop');
+		shareBtn = $get('.btn.share');
 		isElementsInited = true;
 		onElementsInitFinish();
 	}
@@ -116,7 +116,7 @@
 		dislikeBtn.onclick = function () {
 			sendGetRequest(baseData.ads[0].ad_dislike);
 		};
-		hideBtn.onclick = function () {
+		stopBtn.onclick = function () {
 			sendGetRequest(baseData.ads[0].ad_hide);
 		};
 		shareBtn.onclick = function () {
