@@ -35,6 +35,9 @@
 		event = event || window.event;
 		var img = event.target;
 		addClass(spinner, 'hidden');
+		image.onload=function(){
+			console.log(image.naturalHeight);
+		};
 		image.src = img.src;
 		imageMirror.src = img.src;
 		removeClass(header, 'hidden');
