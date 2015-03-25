@@ -80,7 +80,7 @@
 	}
 
 	function correctImageMirrorPosition () {
-		imageMirror.style.top = image.offsetHeight + 'px';
+		imageMirror.style.top = image.offsetHeight * 2 + 'px';
 	}
 
 	function onScreenOrientationChange(mql) {
