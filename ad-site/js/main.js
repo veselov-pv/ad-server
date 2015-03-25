@@ -43,7 +43,7 @@
 	}
 
 	function getNewImage() {
-		var img = d.createElement('img');
+		var img = document.createElement('img');
 		img.onload = onImageLoad;
 		img.src = baseData.ads[0].image_url;
 	}
