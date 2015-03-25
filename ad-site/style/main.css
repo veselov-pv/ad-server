@@ -115,14 +115,6 @@ html, body, .ad-content {
 	}
 }
 
-.header-title {
-	-webkit-box-align: center;
-	-moz-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-
 .header-text {
 	text-shadow: 0 0 0.4vm white;
 	text-shadow: 0 0 0.4vmin white;
@@ -143,25 +135,15 @@ html, body, .ad-content {
 	background-position: center;
 }
 
-.header-right-side {
-	-webkit-box-align: center;
-	-moz-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-
 .btn.close {
-	-webkit-box-flex: 0;
-	-moz-box-flex: 0;
-	-webkit-flex: 0 1 7vmin;
-	-ms-flex: 0 1 7vm;
-	-ms-flex: 0 1 7vmin;
-	flex: 0 1 7vm;
-	flex: 0 1 7vmin;
-
+	position: absolute;
+	right: 0;
 	height: 7vm;
 	height: 7vmin;
+	width: 7vm;
+	width: 7vmin;
+	margin-top: 1.5vm;
+	margin-top: 1.5vmin;
 	margin-right: 1.5vm;
 	margin-right: 1.5vmin;
 	background: url(../img/close-icon.png) no-repeat 0 0;
