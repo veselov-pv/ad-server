@@ -115,6 +115,14 @@ html, body, .ad-content {
 	}
 }
 
+.header-title {
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
 .header-text {
 	text-shadow: 0 0 0.4vm white;
 	text-shadow: 0 0 0.4vmin white;

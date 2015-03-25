@@ -31,7 +31,7 @@
 
 	function onImageLoad(event) {
 		sendGetRequest(baseData.ads[0].inbox_open);
-		
+
 		event = event || window.event;
 		var img = event.target;
 		addClass(spinner, 'hidden');
