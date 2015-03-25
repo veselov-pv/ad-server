@@ -189,10 +189,11 @@ html, body, .ad-content {
 	max-height: 100%;
 	max-width: 100%;
 
+	top:0;
+	bottom: 0;
 	left:0;
 	right:0;
-	margin-left:auto;
-	margin-right:auto;
+	margin: auto;
 
 	border: 0.8vm solid #ddd;
 	border: 0.8vmin solid #ddd;
@@ -208,14 +209,12 @@ html, body, .ad-content {
 }
 
 .image {
-	bottom: 0;
 	cursor: pointer;
 }
 
 .image-mirror {
-	top: 100%;
-	margin-top: 1.6vm;
-	margin-top: 1.6vmin;
+	/*margin-top: 1.6vm;
+	margin-top: 1.6vmin;*/
 
 	-moz-transform: scaleY(-1);
 	-o-transform: scaleY(-1);

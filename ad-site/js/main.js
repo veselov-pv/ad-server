@@ -79,8 +79,13 @@
 		return mql.matches ? PORTRAIT : LANDSCAPE;
 	}
 
+	function correctImageMirrorPosition () {
+		imageMirror.style.top = image.offsetHeight + 'px';
+	}
+
 	function onScreenOrientationChange(mql) {
 		checkImageDefiningSize();
+		correctImageMirrorPosition();
 		setCurrentOrientation(checkOrientation(mql));
 	}
 
