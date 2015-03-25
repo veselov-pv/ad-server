@@ -4,7 +4,7 @@
 		hideBtn, shareBtn, baseData;
 	var PORTRAIT = 'portrait';
 	var LANDSCAPE = 'landscape';
-	var BASE_URL = 'https://spherical-cow.herokuapp.com/data';
+	var BASE_URL = 'http://spherical-cow.herokuapp.com/data';
 	var isElementsInited = false;
 
 	function addClass(o, c) {
