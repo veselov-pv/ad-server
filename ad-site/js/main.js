@@ -35,16 +35,15 @@
 		event = event || window.event;
 		var img = event.target;
 		addClass(spinner, 'hidden');
-		image.onload=function(){
-			console.log(image.naturalHeight);
+		image.onload = function () {
+			checkImageDefiningSize();
+			correctImageMirrorPosition();
 		};
 		image.src = img.src;
 		imageMirror.src = img.src;
 		removeClass(header, 'hidden');
 		removeClass(imageWr, 'hidden');
 		removeClass(downloadBtnWr, 'hidden');
-		checkImageDefiningSize();
-		correctImageMirrorPosition();
 	}
 
 	function getNewImage() {
@@ -84,7 +83,7 @@
 		return mql.matches ? PORTRAIT : LANDSCAPE;
 	}
 
-	function correctImageMirrorPosition () {
+	function correctImageMirrorPosition() {
 		imageMirror.style.top = image.offsetHeight * 2 + 'px';
 	}
 
