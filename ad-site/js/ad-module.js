@@ -37,6 +37,14 @@ var adModule = (function () {
 		}
 	}
 
+	function correctImageMirrorPosition() {
+		imageMirror.style.top = image.offsetHeight * 2 + 'px';
+	}
+
+	function correctDownloadBtnWidth(){
+		downloadBtn.style.width = image.clientWidth + 'px';
+	}
+
 	function onImageLoad(event) {
 		sendGetRequest(baseData.ads[0].inbox_open);
 
@@ -46,6 +54,7 @@ var adModule = (function () {
 		image.onload = function () {
 			checkImageDefiningSize();
 			correctImageMirrorPosition();
+			correctDownloadBtnWidth();
 		};
 		image.src = img.src;
 		imageMirror.src = img.src;
@@ -81,13 +90,10 @@ var adModule = (function () {
 		onElementsInitFinish();
 	}
 
-	function correctImageMirrorPosition() {
-		imageMirror.style.top = image.offsetHeight * 2 + 'px';
-	}
-
 	function onScreenOrientationChange(mql) {
 		checkImageDefiningSize();
 		correctImageMirrorPosition();
+		correctDownloadBtnWidth();
 	}
 
 	function initOrientationListener() {

@@ -43,7 +43,7 @@
 	flex: 1 1 0;
 }
 
-.all-centering {
+.all-center {
 	-webkit-box-pack: center;
 	-moz-box-pack: center;
 	-webkit-justify-content: center;
@@ -229,16 +229,12 @@ html, body, .ad-content {
 }
 
 .btn.download {
-	position: relative;
+	height: 15vmin;
+	min-width: 50vmin;
 	z-index: 2;
-	-webkit-align-self: stretch;
-	-moz-align-self: stretch;
-	-ms-align-self: stretch;
-	align-self: stretch;
+
 	margin-top: 5vm;
 	margin-top: 5vmin;
-	padding: 4vm;
-	padding: 4vmin;
 	text-align: center;
 	border: 0.4vm #4e150b solid;
 	border: 0.4vmin #4e150b solid;
@@ -247,7 +243,6 @@ html, body, .ad-content {
 	color: transparent;
 	font-size: 6vm;
 	font-size: 6vmin;
-
 	-webkit-border-radius: 2vmin;
 	-moz-border-radius: 2vmin;
 	border-radius: 2vm;
