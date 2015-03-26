@@ -15,24 +15,26 @@
 			<div class="header-logo"></div>
 			<div class="btn close"></div>
 		</div>
-		<div class="banner flex-1 flex-cont flex-vert all-centering">
-			<div class="spinner"></div>
+		<div class="banner flex-1 flex-cont flex-vert">
+			<div class="flex-1 flex-cont flex-vert all-centering">
+				<div class="spinner"></div>
+				<div class="image-wrapper flex-1 hidden">
+					<img src="" class="image"/>
+					<img src="" class="image-mirror"/>
+					<svg height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" baseProfile="full">
+						<mask id="fade_down_svg_mask" maskUnits="objectBoundingBox"
+							  maskContentUnits="objectBoundingBox">
+							<linearGradient id="fade_down_svg_gradient" gradientUnits="objectBoundingBox" x2="0" y2="1">
+								<stop stop-color="white" stop-opacity="0" offset="0.5"></stop>
+								<stop stop-color="white" stop-opacity="1" offset="1"></stop>
+							</linearGradient>
+							<rect x="0" y="0" width="1" height="1" fill="url(#fade_down_svg_gradient)"></rect>
+						</mask>
+					</svg>
+				</div>
 
-			<div class="image-wrapper flex-1 hidden">
-				<img src="" class="image"/>
-				<img src="" class="image-mirror"/>
-				<svg height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" baseProfile="full">
-					<mask id="fade_down_svg_mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
-						<linearGradient id="fade_down_svg_gradient" gradientUnits="objectBoundingBox" x2="0" y2="1">
-							<stop stop-color="white" stop-opacity="0" offset="0.5"></stop>
-							<stop stop-color="white" stop-opacity="1" offset="1"></stop>
-						</linearGradient>
-						<rect x="0" y="0" width="1" height="1" fill="url(#fade_down_svg_gradient)"></rect>
-					</mask>
-				</svg>
+				<div class="btn download hidden">Download Now</div>
 			</div>
-
-			<div class="btn download hidden">Download Now</div>
 		</div>
 	</div>
 
