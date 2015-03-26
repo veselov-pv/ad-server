@@ -41,7 +41,7 @@ var adModule = (function () {
 		imageMirror.style.top = image.offsetHeight * 2 + 'px';
 	}
 
-	function correctDownloadBtnWidth(){
+	function correctDownloadBtnWidth() {
 		downloadBtn.style.width = image.clientWidth + 'px';
 	}
 
