@@ -228,15 +228,14 @@ html, body, .ad-content {
 	height: 100%;
 }
 
-.download-btn-wrapper {
-	width: 100%;
-	padding-top: 8vm;
-	padding-top: 8vmin;
-}
-
 .btn.download {
 	position: relative;
 	z-index: 2;
+	width: 100%;
+	margin-top: 8vm;
+	margin-top: 8vmin;
+	padding: 4vm;
+	padding: 4vmin;
 	text-align: center;
 	border: 0.4vm #4e150b solid;
 	border: 0.4vmin #4e150b solid;
@@ -245,8 +244,7 @@ html, body, .ad-content {
 	color: transparent;
 	font-size: 6vm;
 	font-size: 6vmin;
-	padding: 4vm;
-	padding: 4vmin;
+
 	-webkit-border-radius: 2vmin;
 	-moz-border-radius: 2vmin;
 	border-radius: 2vm;
