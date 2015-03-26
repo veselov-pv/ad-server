@@ -229,23 +229,14 @@ html, body, .ad-content {
 }
 
 .download-btn-wrapper {
-	-webkit-align-self: stretch;
-	-moz-align-self: stretch;
-	-ms-align-self: stretch;
-	align-self: stretch;
-
 	padding-top: 8vm;
 	padding-top: 8vmin;
 }
 
 .btn.download {
+	position: relative;
 	z-index: 2;
-
-	-webkit-align-self: stretch;
-	-moz-align-self: stretch;
-	-ms-align-self: stretch;
-	align-self: stretch;
-
+	text-align: center;
 	border: 0.4vm #4e150b solid;
 	border: 0.4vmin #4e150b solid;
 	text-shadow: 0 0 0.4vm white;
