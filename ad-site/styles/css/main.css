@@ -202,19 +202,20 @@ html, body {
   /* Creating new -webkit context. */
   -webkit-box-shadow: 0 0 60px 20px #888, 0 0 70px 80px #bbb;
   box-shadow: 0 0 60px 20px #888, 0 0 70px 80px #bbb;
-  -moz-box-shadow: 0 0 40px 40px #888;
-  /* Capability transforms2d is prefixed with -moz because 0.77252% of users need it which is more than the threshold of 0.1%. */
-  /* Creating new -moz context. */
-  -moz-transform: translate3d(0, 0, 0);
-  /* Capability transforms2d is prefixed with -ms because 2.6001% of users need it which is more than the threshold of 0.1%. */
-  /* Creating new -ms context. */
-  -ms-transform: translate3d(0, 0, 0);
-  /* Capability transforms2d is not prefixed with -o because 0.08196% of users are affected which is less than the threshold of 0.1. */
-  /* Capability transforms2d is prefixed with -webkit because 52.08628% of users need it which is more than the threshold of 0.1%. */
-  /* Creating new -webkit context. */
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
   cursor: pointer;
+}
+@-moz-document url-prefix() {
+  .ad-content .panel.download .banner .image-wrapper .image {
+    /* Capability css-boxshadow is prefixed with -moz because 0.16452% of users need it which is more than the threshold of 0.1%. */
+    /* Creating new -moz context. */
+    -moz-box-shadow: 0 0 40px 40px #888;
+    /* Capability css-boxshadow is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
+    /* Capability css-boxshadow is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
+    /* Capability css-boxshadow is prefixed with -webkit because 1.6785% of users need it which is more than the threshold of 0.1%. */
+    /* Creating new -webkit context. */
+    -webkit-box-shadow: 0 0 40px 40px #888;
+    box-shadow: 0 0 40px 40px #888;
+  }
 }
 .ad-content .panel.download .banner .image-wrapper .image-mirror {
   /*margin-top: 1.6vmin;*/
