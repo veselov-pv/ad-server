@@ -38,7 +38,9 @@ var adModule = (function () {
 	}
 
 	function correctImageMirrorPosition() {
-		imageMirror.style.top = image.offsetHeight * 2 + 'px';
+		setTimeout(function () {
+			imageMirror.style.top = image.offsetTop + image.offsetHeight + 'px';
+		}, 100);
 	}
 
 	function correctDownloadBtnWidth() {
@@ -90,7 +92,7 @@ var adModule = (function () {
 		onElementsInitFinish();
 	}
 
-	function onScreenOrientationChange(mql) {
+	function onScreenOrientationChange() {
 		checkImageDefiningSize();
 		correctImageMirrorPosition();
 		correctDownloadBtnWidth();
