@@ -38,9 +38,19 @@ var adModule = (function () {
 	}
 
 	function correctImageMirrorPosition() {
-		setTimeout(function () {
+		function correct() {
 			imageMirror.style.top = image.offsetTop + image.offsetHeight + 'px';
-		}, 100);
+		}
+
+		function deferredRun(callback, delay, times) {
+			times -= 1;
+			setTimeout(function () {
+				callback();
+				if (times) deferredRun(callback, delay, times);
+			}, delay);
+		}
+
+		deferredRun(correct, 30, 3);
 	}
 
 	function correctDownloadBtnWidth() {
@@ -56,14 +66,13 @@ var adModule = (function () {
 			checkImageDefiningSize();
 			correctImageMirrorPosition();
 			correctDownloadBtnWidth();
-			addClass(spinner, 'hidden');
-			removeClass(header, 'hidden');
-			removeClass(imageWr, 'hidden');
-			removeClass(downloadBtn, 'hidden');
 		};
 		image.src = img.src;
 		imageMirror.src = img.src;
-
+		addClass(spinner, 'hidden');
+		removeClass(header, 'hidden');
+		removeClass(imageWr, 'hidden');
+		removeClass(downloadBtn, 'hidden');
 	}
 
 	function getNewImage() {
