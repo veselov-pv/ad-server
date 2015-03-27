@@ -1,0 +1,288 @@
+@import "compass/css3";
+/*$debug-browser-support: true;*/
+@import "flex-mixins";
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.ad-content {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	@media (orientation: portrait) {
+		@include flex-direction_column;
+	}
+
+	@media (orientation: landscape) {
+		@include flex-direction_row;
+	}
+
+	* {
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	}
+
+	.flex-cont {
+		@include display_flex;
+		@include flex-direction_row;
+	}
+
+	.flex-vert {
+		@include flex-direction_column;
+	}
+
+	.flex-1 {
+		@include flex_110;
+	}
+
+	.all-center {
+		@include justify-content_center;
+		@include align-items_center;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.panel.download {
+		@include order(2);
+		background-color: #fff;
+
+		.header {
+			height: 10vm;
+			height: 10vmin;
+			z-index: 1;
+
+			@media (orientation: portrait) {
+				background: #454142;
+				/*@include background-image(linear-gradient(92deg, #454142 10%, #000 77%));*/
+				background: -moz-linear-gradient(92deg, #454142 10%, #000 77%);
+				background: -webkit-linear-gradient(92deg, #454142 10%, #000 77%);
+				background: -o-linear-gradient(92deg, #454142 10%, #000 77%);
+				background: -ms-linear-gradient(92deg, #454142 10%, #000 77%);
+				background: linear-gradient(182deg, #454142 10%, #000 77%);
+
+			}
+
+			.header-text {
+				text-shadow: 0 0 0.4vm white;
+				text-shadow: 0 0 0.4vmin white;
+				font-size: 3vm;
+				font-size: 3vmin;
+				color: transparent;
+			}
+
+			.header-logo {
+				width: 13vm;
+				width: 13vmin;
+				height: 6vm;
+				height: 6vmin;
+				margin-left: 1vm;
+				margin-left: 1vmin;
+				background: url(../../img/logo-white-small.png) no-repeat 0 0;
+				background-size: 100%;
+				background-position: center;
+			}
+
+			.btn.close {
+				position: absolute;
+				right: 0;
+				height: 7vm;
+				height: 7vmin;
+				width: 7vm;
+				width: 7vmin;
+				margin-top: 1.5vm;
+				margin-top: 1.5vmin;
+				margin-right: 1.5vm;
+				margin-right: 1.5vmin;
+				background: url(../../img/close-icon.png) no-repeat 0 0;
+				background-size: 100%;
+				cursor: pointer;
+			}
+		}
+
+		.banner {
+			padding: 5vm;
+			padding: 5vmin;
+
+			.spinner {
+				background: url(../../img/loading-spinner.gif) no-repeat 0 0;
+				background-size: 100%;
+				width: 10vm;
+				width: 10vmin;
+				height: 10vm;
+				height: 10vmin;
+			}
+
+			.image-wrapper {
+				@include align-self_stretch;
+				position: relative;
+
+				%imagesCommonStyles {
+					position: absolute;
+					max-height: 100%;
+					max-width: 100%;
+
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
+
+					border: 0.8vm solid #ddd;
+					border: 0.8vmin solid #ddd;
+					border-radius: 5vm;
+					border-radius: 5vmin;
+					box-shadow: 0 0 38vm 16vm #666;
+					box-shadow: 0 0 38vmin 16vmin #666;
+					-o-transform: translate3d(0, 0, 0);
+					-moz-transform: translate3d(0, 0, 0);
+					-ms-transform: translate3d(0, 0, 0);
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+
+				}
+
+				.image {
+					@extend %imagesCommonStyles;
+					cursor: pointer;
+				}
+
+				.image-mirror {
+					@extend %imagesCommonStyles;
+
+					/*margin-top: 1.6vm;
+					margin-top: 1.6vmin;*/
+
+					-moz-transform: scaleY(-1);
+					-o-transform: scaleY(-1);
+					-webkit-transform: scaleY(-1);
+					transform: scaleY(-1);
+					-ms-filter: "FlipV";
+
+					-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(65%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
+					mask: url(#fade_down_svg_mask);
+
+					opacity: 0.3;
+				}
+
+				&.definingWidth {
+					.image, .image-mirror {
+						width: 100%;
+						height: auto;
+					}
+				}
+
+				&.definingHeight {
+					.image, .image-mirror {
+						width: auto;
+						height: 100%;
+					}
+				}
+			}
+
+			.btn.download {
+				height: 15vmin;
+				min-width: 50vmin;
+				z-index: 2;
+
+				margin-top: 5vm;
+				margin-top: 5vmin;
+				text-align: center;
+				border: 0.4vm #4e150b solid;
+				border: 0.4vmin #4e150b solid;
+				text-shadow: 0 0 0.4vm white;
+				text-shadow: 0 0 0.4vmin white;
+				color: transparent;
+				font-size: 6vm;
+				font-size: 6vmin;
+				-webkit-border-radius: 2vmin;
+				-moz-border-radius: 2vmin;
+				border-radius: 2vm;
+				border-radius: 2vmin;
+				background: #FD2200;
+				background: -moz-linear-gradient(90deg, #FD2200 30%, #FE2500 70%);
+				background: -webkit-linear-gradient(90deg, #FD2200 30%, #FE2500 70%);
+				background: -o-linear-gradient(90deg, #FD2200 30%, #FE2500 70%);
+				background: -ms-linear-gradient(90deg, #FD2200 30%, #FE2500 70%);
+				background: linear-gradient(0deg, #FD2200 30%, #FE2500 70%);
+				-webkit-box-shadow: 0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
+				-moz-box-shadow: 0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
+				box-shadow: 0 1.5vm 1.5vm rgba(50, 50, 50, 0.5);
+				box-shadow: 0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
+				cursor: pointer;
+			}
+		}
+	}
+
+	.panel.social {
+		z-index: 2;
+		background: #454142;
+		background: -moz-linear-gradient(92deg, #000 13%, #454142 80%);
+		background: -webkit-linear-gradient(92deg, #000 13%, #454142 80%);
+		background: -o-linear-gradient(92deg, #000 13%, #454142 80%);
+		background: -ms-linear-gradient(92deg, #000 13%, #454142 80%);
+		background: linear-gradient(182deg, #000 13%, #454142 80%);
+
+		@media (orientation: portrait) {
+			@include order(3);
+			@include flex-direction_row;
+			height: 10%;
+		}
+
+		@media (orientation: landscape) {
+			@include order(1);
+			@include flex-direction_column;
+			width: 10%;
+		}
+
+		.btn {
+			text-shadow: 0 0 0.4vm white;
+			text-shadow: 0 0 0.4vmin white;
+			font-size: 4vm;
+			font-size: 4vmin;
+			color: transparent;
+			cursor: pointer;
+
+			.icon {
+				width: 8vm;
+				width: 8vmin;
+				height: 9vm;
+				height: 9vmin;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: 0 0;
+			}
+
+			&.like, &.dislike {
+				.icon {
+					background-image: url(../../img/like-icon.png);
+				}
+			}
+
+			&.dislike .icon {
+				-o-transform: rotate(180deg);
+				-moz-transform: rotate(180deg);
+				-ms-transform: rotate(180deg);
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+
+			&.stop .icon {
+				background-image: url(../../img/stop-icon.png);
+			}
+
+			&.share .icon {
+				background-image: url(../../img/share-icon.png);
+			}
+		}
+
+	}
+}
