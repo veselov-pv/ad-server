@@ -127,7 +127,7 @@ html, body {
   }
 }
 .ad-content .panel.download .header .header-text {
-  text-shadow: 0 0 0.4vmin #fff;
+  text-shadow: 0 0 0.1vmin #fff;
   font-size: 3vmin;
   color: transparent;
 }
@@ -254,7 +254,7 @@ html, body {
   /* Creating new -webkit context. */
   -webkit-border-radius: 2vmin;
   border-radius: 2vmin;
-  text-shadow: 0 0 0.4vmin white;
+  text-shadow: 0 0 0.1vmin white;
   color: transparent;
   font-size: 6vmin;
   background: #FD2200;
@@ -338,7 +338,7 @@ html, body {
   }
 }
 .ad-content .panel.social .btn {
-  text-shadow: 0 0 0.4vmin white;
+  text-shadow: 0 0 0.1vmin white;
   font-size: 4vmin;
   color: transparent;
   cursor: pointer;

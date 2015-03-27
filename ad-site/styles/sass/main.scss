@@ -69,7 +69,7 @@ html, body {
 			}
 
 			.header-text {
-				@include text-shadow(0 0 0.4vmin #fff);
+				@include text-shadow(0 0 0.1vmin #fff);
 				font-size: 3vmin;
 				color: transparent;
 			}
@@ -169,7 +169,7 @@ html, body {
 				text-align: center;
 				border: 0.4vmin #4e150b solid;
 				@include border-radius(2vmin);
-				@include text-shadow(0 0 0.4vmin white);
+				@include text-shadow(0 0 0.1vmin white);
 				color: transparent;
 				font-size: 6vmin;
 				background: #FD2200;
@@ -198,7 +198,7 @@ html, body {
 		}
 
 		.btn {
-			@include text-shadow(0 0 0.4vmin white);
+			@include text-shadow(0 0 0.1vmin white);
 			font-size: 4vmin;
 			color: transparent;
 			cursor: pointer;
