@@ -36,6 +36,7 @@ var adModule = (function () {
 			removeClass(imageWr, 'definingWidth');
 			addClass(imageWr, 'definingHeight');
 		}
+		removeClass(image,'not-visible');
 	}
 
 	function deferredRun(callback, delay, times) {
@@ -70,12 +71,15 @@ var adModule = (function () {
 		var imageSummaryOffsetPos = getSummaryOffset(image);
 		downloadBtn.style.left = imageSummaryOffsetPos.left + 'px';
 		downloadBtn.style.top = imageSummaryOffsetPos.top + image.offsetHeight + 15 + 'px';
+		removeClass(downloadBtn, 'not-visible');
 	}
 
 	function recheckElements () {
+		addClass(image,'not-visible');
 		checkImageDefiningSize();
 		addClass(imageMirror, 'not-visible');
 		deferredRun(correctImageMirrorPosition, 30, 3);
+		addClass(downloadBtn, 'not-visible');
 		deferredRun(correctDownloadBtnWidthAndPosition, 30, 3);
 	}
 
@@ -84,8 +88,6 @@ var adModule = (function () {
 		addClass(spinner, 'hidden');
 		removeClass(header, 'hidden');
 		removeClass(imageWr, 'hidden');
-		removeClass(image,'not-visible');
-		removeClass(downloadBtn, 'hidden');
 		recheckElements();
 	}
 
