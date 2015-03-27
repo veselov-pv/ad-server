@@ -37,24 +37,37 @@ var adModule = (function () {
 		}
 	}
 
-	function correctImageMirrorPosition() {
-		function correct() {
-			imageMirror.style.top = image.offsetTop + image.offsetHeight + 'px';
-		}
-
-		function deferredRun(callback, delay, times) {
-			times -= 1;
-			setTimeout(function () {
-				callback();
-				if (times) deferredRun(callback, delay, times);
-			}, delay);
-		}
-
-		deferredRun(correct, 30, 3);
+	function deferredRun(callback, delay, times) {
+		times -= 1;
+		setTimeout(function () {
+			callback();
+			if (times) deferredRun(callback, delay, times);
+		}, delay);
 	}
 
-	function correctDownloadBtnWidth() {
+	function correctImageMirrorPosition() {
+		imageMirror.style.top = image.offsetTop + image.offsetHeight + 'px';
+	}
+
+	function getSummaryOffset(element) {
+		var top = 0, left = 0;
+		do {
+			top += element.offsetTop || 0;
+			left += element.offsetLeft || 0;
+			element = element.offsetParent;
+		} while (element);
+
+		return {
+			top: top,
+			left: left
+		};
+	}
+
+	function correctDownloadBtnWidthAndPosition() {
 		downloadBtn.style.width = image.clientWidth + 'px';
+		var summaryImageOffset = getSummaryOffset(image);
+		downloadBtn.style.left = summaryImageOffset.left + 'px';
+		downloadBtn.style.top = summaryImageOffset.top + image.offsetHeight + 'px';
 	}
 
 	function onImageLoad(event) {
@@ -64,8 +77,8 @@ var adModule = (function () {
 		var img = event.target;
 		image.onload = function () {
 			checkImageDefiningSize();
-			correctImageMirrorPosition();
-			correctDownloadBtnWidth();
+			deferredRun(correctImageMirrorPosition, 30, 3);
+			correctDownloadBtnWidthAndPosition();
 		};
 		image.src = img.src;
 		imageMirror.src = img.src;
@@ -104,8 +117,8 @@ var adModule = (function () {
 
 	function onScreenOrientationChange() {
 		checkImageDefiningSize();
-		correctImageMirrorPosition();
-		correctDownloadBtnWidth();
+		deferredRun(correctImageMirrorPosition, 30, 3);
+		correctDownloadBtnWidthAndPosition();
 	}
 
 	function initOrientationListener() {

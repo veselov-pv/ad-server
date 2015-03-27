@@ -110,6 +110,7 @@ html, body {
 			.image-wrapper {
 				@include align-self_stretch;
 				position: relative;
+				margin-bottom: 20vmin;
 
 				%imagesCommonStyles {
 					position: absolute;
@@ -158,11 +159,11 @@ html, body {
 			}
 
 			.btn.download {
+				position: absolute;
 				height: 15vmin;
 				min-width: 50vmin;
 				z-index: 2;
 
-				margin-top: 5vmin;
 				text-align: center;
 				border: 2px #80463C solid;
 				@include border-radius(8px);

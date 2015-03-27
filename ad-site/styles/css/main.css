@@ -166,6 +166,7 @@ html, body {
   -ms-align-self: stretch;
   align-self: stretch;
   position: relative;
+  margin-bottom: 20vmin;
 }
 .ad-content .panel.download .banner .image-wrapper .image, .ad-content .panel.download .banner .image-wrapper .image-mirror {
   position: absolute;
@@ -240,10 +241,10 @@ html, body {
   height: 100%;
 }
 .ad-content .panel.download .banner .btn.download {
+  position: absolute;
   height: 15vmin;
   min-width: 50vmin;
   z-index: 2;
-  margin-top: 5vmin;
   text-align: center;
   border: 2px #80463C solid;
   /* Capability border-radius is prefixed with -moz because 0.25036% of users need it which is more than the threshold of 0.1%. */
