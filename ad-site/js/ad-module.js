@@ -1,6 +1,7 @@
 var adModule = (function () {
 	var content, header, closeBtn, spinner, imageWr, image, imageMirror,
-		downloadBtn, likeBtn, dislikeBtn, stopBtn, shareBtn, baseData;
+		downloadBtn, likeBtn, dislikeBtn, stopBtn, shareBtn, baseData,
+		onElementsInitFinish;
 	var PORTRAIT = 'portrait';
 	var LANDSCAPE = 'landscape';
 	var BASE_URL = 'https://spherical-cow.herokuapp.com/data';
@@ -67,21 +68,18 @@ var adModule = (function () {
 		downloadBtn.style.width = image.clientWidth + 'px';
 		var imageSummaryOffsetPos = getSummaryOffset(image);
 		downloadBtn.style.left = imageSummaryOffsetPos.left + 'px';
-		downloadBtn.style.top = imageSummaryOffsetPos.top + image.offsetHeight + 20 + 'px';
+		downloadBtn.style.top = imageSummaryOffsetPos.top + image.offsetHeight + 15 + 'px';
+	}
+
+	function recheckElements () {
+		checkImageDefiningSize();
+		deferredRun(correctImageMirrorPosition, 30, 3);
+		correctDownloadBtnWidthAndPosition();
 	}
 
 	function onImageLoad(event) {
 		sendGetRequest(baseData.ads[0].inbox_open);
-
-		event = event || window.event;
-		var bufferImg = event.target;
-		image.onload = function () {
-			checkImageDefiningSize();
-			deferredRun(correctImageMirrorPosition, 30, 3);
-			correctDownloadBtnWidthAndPosition();
-		};
-		image.src = bufferImg.src;
-		imageMirror.src = bufferImg.src;
+		recheckElements();
 		addClass(spinner, 'hidden');
 		removeClass(header, 'hidden');
 		removeClass(imageWr, 'hidden');
@@ -89,14 +87,9 @@ var adModule = (function () {
 	}
 
 	function getNewImage() {
-		var bufferImg = document.createElement('img');
-		bufferImg.className = 'hidden';
-		content.appendChild(bufferImg);
-		bufferImg.onload = onImageLoad;
-		bufferImg.src = baseData.ads[0].image_url;
-	}
-
-	function onElementsInitFinish() {
+		image.src = baseData.ads[0].image_url;
+		image.onload = onImageLoad;
+		imageMirror.src = baseData.ads[0].image_url;
 	}
 
 	function initElements() {
@@ -114,13 +107,11 @@ var adModule = (function () {
 		stopBtn = $get('.btn.stop');
 		shareBtn = $get('.btn.share');
 		isElementsInited = true;
-		onElementsInitFinish();
+		if (typeof onElementsInitFinish == 'function') onElementsInitFinish();
 	}
 
 	function onScreenOrientationChange() {
-		checkImageDefiningSize();
-		deferredRun(correctImageMirrorPosition, 30, 3);
-		correctDownloadBtnWidthAndPosition();
+		recheckElements();
 	}
 
 	function initOrientationListener() {
