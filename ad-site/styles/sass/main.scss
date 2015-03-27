@@ -2,12 +2,36 @@
 /*$debug-browser-support: true;*/
 @import "flex-mixins";
 
+/* temporary */
 html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+}
+
+
+.flex-cont {
+	@include display_flex;
+	@include flex-direction_row;
+}
+
+.flex-vert {
+	@include flex-direction_column;
+}
+
+.flex-1 {
+	@include flex_110;
+}
+
+.all-center {
+	@include justify-content_center;
+	@include align-items_center;
+}
+
+.hidden {
+	display: none;
 }
 
 .ad-content {
@@ -27,28 +51,6 @@ html, body {
 
 	* {
 		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	}
-
-	&.flex-cont, .flex-cont {
-		@include display_flex;
-		@include flex-direction_row;
-	}
-
-	&.flex-vert, .flex-vert {
-		@include flex-direction_column;
-	}
-
-	&.flex-1, .flex-1 {
-		@include flex_110;
-	}
-
-	&.all-center, .all-center {
-		@include justify-content_center;
-		@include align-items_center;
-	}
-
-	&.hidden, .hidden {
-		display: none;
 	}
 
 	.panel.download {
