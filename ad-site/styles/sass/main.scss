@@ -122,14 +122,14 @@ html, body {
 
 					border: 3px solid #ddd;
 					@include border-radius(15px);
-					@include box-shadow(0 0 60px 20px #888, 0 0 70px 80px #bbb);
-					@include transform(translate3d(0, 0, 0));
 				}
 
 				.image {
 					@extend %imagesCommonStyles;
 					top: 0;
 					bottom: 0;
+					@include box-shadow(0 0 60px 20px #888, 0 0 70px 80px #bbb);
+					@include transform(translate3d(0, 0, 0));
 					cursor: pointer;
 				}
 

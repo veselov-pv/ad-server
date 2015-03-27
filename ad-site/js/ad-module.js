@@ -52,17 +52,18 @@ var adModule = (function () {
 
 		event = event || window.event;
 		var img = event.target;
-		addClass(spinner, 'hidden');
 		image.onload = function () {
 			checkImageDefiningSize();
 			correctImageMirrorPosition();
 			correctDownloadBtnWidth();
+			addClass(spinner, 'hidden');
+			removeClass(header, 'hidden');
+			removeClass(imageWr, 'hidden');
+			removeClass(downloadBtn, 'hidden');
 		};
 		image.src = img.src;
 		imageMirror.src = img.src;
-		removeClass(header, 'hidden');
-		removeClass(imageWr, 'hidden');
-		removeClass(downloadBtn, 'hidden');
+
 	}
 
 	function getNewImage() {

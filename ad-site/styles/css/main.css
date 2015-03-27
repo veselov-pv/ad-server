@@ -184,6 +184,10 @@ html, body {
   /* Creating new -webkit context. */
   -webkit-border-radius: 15px;
   border-radius: 15px;
+}
+.ad-content .panel.download .banner .image-wrapper .image {
+  top: 0;
+  bottom: 0;
   /* Capability css-boxshadow is prefixed with -moz because 0.16452% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -moz context. */
   -moz-box-shadow: 0 0 60px 20px #888, 0 0 70px 80px #bbb;
@@ -204,10 +208,6 @@ html, body {
   /* Creating new -webkit context. */
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-}
-.ad-content .panel.download .banner .image-wrapper .image {
-  top: 0;
-  bottom: 0;
   cursor: pointer;
 }
 .ad-content .panel.download .banner .image-wrapper .image-mirror {
