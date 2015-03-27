@@ -48,6 +48,7 @@ var adModule = (function () {
 
 	function correctImageMirrorPosition() {
 		imageMirror.style.top = image.offsetTop + image.offsetHeight + 'px';
+		removeClass(imageWr, 'hidden');
 	}
 
 	function getSummaryOffset(element) {
@@ -73,6 +74,7 @@ var adModule = (function () {
 
 	function recheckElements () {
 		checkImageDefiningSize();
+		addClass(imageWr, 'hidden');
 		deferredRun(correctImageMirrorPosition, 30, 3);
 		correctDownloadBtnWidthAndPosition();
 	}
@@ -81,7 +83,6 @@ var adModule = (function () {
 		sendGetRequest(baseData.ads[0].inbox_open);
 		addClass(spinner, 'hidden');
 		removeClass(header, 'hidden');
-		removeClass(imageWr, 'hidden');
 		removeClass(downloadBtn, 'hidden');
 		recheckElements();
 	}
