@@ -76,7 +76,7 @@ var adModule = (function () {
 		checkImageDefiningSize();
 		addClass(imageMirror, 'not-visible');
 		deferredRun(correctImageMirrorPosition, 30, 3);
-		correctDownloadBtnWidthAndPosition();
+		deferredRun(correctDownloadBtnWidthAndPosition, 30, 3);
 	}
 
 	function onImageLoad(event) {
