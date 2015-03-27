@@ -120,9 +120,9 @@ html, body {
 					right: 0;
 					margin: auto;
 
-					border: 0.8vmin solid #ddd;
-					@include border-radius(5vmin);
-					@include box-shadow(0 0 38vmin 16vmin #666);
+					border: 3px solid #ddd;
+					@include border-radius(15px);
+					@include box-shadow(0 0 60px 20px #888, 0 0 70px 80px #bbb);
 					@include transform(translate3d(0, 0, 0));
 				}
 
@@ -164,14 +164,14 @@ html, body {
 
 				margin-top: 5vmin;
 				text-align: center;
-				border: 0.4vmin #4e150b solid;
-				@include border-radius(2vmin);
+				border: 2px #80463C solid;
+				@include border-radius(8px);
 				@include text-shadow(0 0 0.2vmin white);
 				color: transparent;
 				font-size: 6vmin;
 				background: #FD2200;
 				@include background-image(linear-gradient(0deg, #FD2200 30%, #FE2500 70%));
-				@include box-shadow(0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5));
+				@include box-shadow(0 7px 7px rgba(50, 50, 50, 0.5));
 				cursor: pointer;
 			}
 		}

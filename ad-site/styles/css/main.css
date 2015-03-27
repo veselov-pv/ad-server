@@ -174,25 +174,25 @@ html, body {
   left: 0;
   right: 0;
   margin: auto;
-  border: 0.8vmin solid #ddd;
+  border: 3px solid #ddd;
   /* Capability border-radius is prefixed with -moz because 0.25036% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -moz context. */
-  -moz-border-radius: 5vmin;
+  -moz-border-radius: 15px;
   /* Capability border-radius is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability border-radius is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability border-radius is prefixed with -webkit because 0.1583% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -webkit context. */
-  -webkit-border-radius: 5vmin;
-  border-radius: 5vmin;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
   /* Capability css-boxshadow is prefixed with -moz because 0.16452% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -moz context. */
-  -moz-box-shadow: 0 0 38vmin 16vmin #666;
+  -moz-box-shadow: 0 0 60px 20px #888, 0 0 70px 80px #bbb;
   /* Capability css-boxshadow is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability css-boxshadow is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability css-boxshadow is prefixed with -webkit because 1.6785% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -webkit context. */
-  -webkit-box-shadow: 0 0 38vmin 16vmin #666;
-  box-shadow: 0 0 38vmin 16vmin #666;
+  -webkit-box-shadow: 0 0 60px 20px #888, 0 0 70px 80px #bbb;
+  box-shadow: 0 0 60px 20px #888, 0 0 70px 80px #bbb;
   /* Capability transforms2d is prefixed with -moz because 0.77252% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -moz context. */
   -moz-transform: translate3d(0, 0, 0);
@@ -245,16 +245,16 @@ html, body {
   z-index: 2;
   margin-top: 5vmin;
   text-align: center;
-  border: 0.4vmin #4e150b solid;
+  border: 2px #80463C solid;
   /* Capability border-radius is prefixed with -moz because 0.25036% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -moz context. */
-  -moz-border-radius: 2vmin;
+  -moz-border-radius: 8px;
   /* Capability border-radius is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability border-radius is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability border-radius is prefixed with -webkit because 0.1583% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -webkit context. */
-  -webkit-border-radius: 2vmin;
-  border-radius: 2vmin;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
   text-shadow: 0 0 0.2vmin white;
   color: transparent;
   font-size: 6vmin;
@@ -276,13 +276,13 @@ html, body {
   background-image: linear-gradient(0deg, #fd2200 30%, #fe2500 70%);
   /* Capability css-boxshadow is prefixed with -moz because 0.16452% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -moz context. */
-  -moz-box-shadow: 0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 0 7px 7px rgba(50, 50, 50, 0.5);
   /* Capability css-boxshadow is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability css-boxshadow is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
   /* Capability css-boxshadow is prefixed with -webkit because 1.6785% of users need it which is more than the threshold of 0.1%. */
   /* Creating new -webkit context. */
-  -webkit-box-shadow: 0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
-  box-shadow: 0 1.5vmin 1.5vmin rgba(50, 50, 50, 0.5);
+  -webkit-box-shadow: 0 7px 7px rgba(50, 50, 50, 0.5);
+  box-shadow: 0 7px 7px rgba(50, 50, 50, 0.5);
   cursor: pointer;
 }
 .ad-content .panel.social {
