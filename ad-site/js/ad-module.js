@@ -82,9 +82,9 @@ var adModule = (function () {
 	function onImageLoad(event) {
 		sendGetRequest(baseData.ads[0].inbox_open);
 		addClass(spinner, 'hidden');
-		addClass(imageWr, 'hidden');
-		removeClass(image,'not-visible');
 		removeClass(header, 'hidden');
+		removeClass(imageWr, 'hidden');
+		removeClass(image,'not-visible');
 		removeClass(downloadBtn, 'hidden');
 		recheckElements();
 	}
