@@ -127,7 +127,7 @@ html, body {
   }
 }
 .ad-content .panel.download .header .header-text {
-  text-shadow: 0 0 0.1vmin #fff;
+  text-shadow: 0 0 0.2vmin #fff;
   font-size: 3vmin;
   color: transparent;
 }
@@ -141,6 +141,7 @@ html, body {
 }
 .ad-content .panel.download .header .btn.close {
   position: absolute;
+  top: 0;
   right: 0;
   height: 7vmin;
   width: 7vmin;
@@ -254,7 +255,7 @@ html, body {
   /* Creating new -webkit context. */
   -webkit-border-radius: 2vmin;
   border-radius: 2vmin;
-  text-shadow: 0 0 0.1vmin white;
+  text-shadow: 0 0 0.2vmin white;
   color: transparent;
   font-size: 6vmin;
   background: #FD2200;
@@ -338,7 +339,7 @@ html, body {
   }
 }
 .ad-content .panel.social .btn {
-  text-shadow: 0 0 0.1vmin white;
+  text-shadow: 0 0 0.2vmin white;
   font-size: 4vmin;
   color: transparent;
   cursor: pointer;
