@@ -65,23 +65,23 @@ var adModule = (function () {
 
 	function correctDownloadBtnWidthAndPosition() {
 		downloadBtn.style.width = image.clientWidth + 'px';
-		var summaryImageOffset = getSummaryOffset(image);
-		downloadBtn.style.left = summaryImageOffset.left + 'px';
-		downloadBtn.style.top = summaryImageOffset.top + image.offsetHeight + 'px';
+		var imageSummaryOffsetPos = getSummaryOffset(image);
+		downloadBtn.style.left = imageSummaryOffsetPos.left + 'px';
+		downloadBtn.style.top = imageSummaryOffsetPos.top + image.offsetHeight + 20 + 'px';
 	}
 
 	function onImageLoad(event) {
 		sendGetRequest(baseData.ads[0].inbox_open);
 
 		event = event || window.event;
-		var img = event.target;
+		var bufferImg = event.target;
 		image.onload = function () {
 			checkImageDefiningSize();
 			deferredRun(correctImageMirrorPosition, 30, 3);
 			correctDownloadBtnWidthAndPosition();
 		};
-		image.src = img.src;
-		imageMirror.src = img.src;
+		image.src = bufferImg.src;
+		imageMirror.src = bufferImg.src;
 		addClass(spinner, 'hidden');
 		removeClass(header, 'hidden');
 		removeClass(imageWr, 'hidden');
@@ -89,9 +89,11 @@ var adModule = (function () {
 	}
 
 	function getNewImage() {
-		var img = document.createElement('img');
-		img.onload = onImageLoad;
-		img.src = baseData.ads[0].image_url;
+		var bufferImg = document.createElement('img');
+		bufferImg.className = 'hidden';
+		content.appendChild(bufferImg);
+		bufferImg.onload = onImageLoad;
+		bufferImg.src = baseData.ads[0].image_url;
 	}
 
 	function onElementsInitFinish() {
