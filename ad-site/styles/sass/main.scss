@@ -135,14 +135,10 @@ html, body {
 
 				.image-mirror {
 					@extend %imagesCommonStyles;
-
 					/*margin-top: 1.6vmin;*/
-
 					@include transform(scaleY(-1));
-
 					-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(65%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 1)));
 					mask: url(#fade_down_svg_mask);
-
 					@include opacity(0.3);
 				}
 
