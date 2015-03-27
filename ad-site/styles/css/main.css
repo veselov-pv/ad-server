@@ -39,7 +39,7 @@ html, body {
 .ad-content * {
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
-.ad-content .flex-cont {
+.ad-content.flex-cont, .ad-content .flex-cont {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -54,12 +54,12 @@ html, body {
   flex-direction: row;
 }
 @-moz-document url-prefix() {
-  .ad-content .flex-cont {
+  .ad-content.flex-cont, .ad-content .flex-cont {
     width: 100%;
     -moz-box-sizing: border-box;
   }
 }
-.ad-content .flex-vert {
+.ad-content.flex-vert, .ad-content .flex-vert {
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
   -webkit-box-orient: vertical;
@@ -68,14 +68,14 @@ html, body {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.ad-content .flex-1 {
+.ad-content.flex-1, .ad-content .flex-1 {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -webkit-flex: 1 1 0;
   -ms-flex: 1 1 0;
   flex: 1 1 0;
 }
-.ad-content .all-center {
+.ad-content.all-center, .ad-content .all-center {
   -webkit-box-pack: center;
   -moz-box-pack: center;
   -webkit-justify-content: center;
@@ -87,7 +87,7 @@ html, body {
   -ms-flex-align: center;
   align-items: center;
 }
-.ad-content .hidden {
+.ad-content.hidden, .ad-content .hidden {
   display: none;
 }
 .ad-content .panel.download {

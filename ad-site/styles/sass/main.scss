@@ -29,25 +29,25 @@ html, body {
 		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	}
 
-	.flex-cont {
+	&.flex-cont, .flex-cont {
 		@include display_flex;
 		@include flex-direction_row;
 	}
 
-	.flex-vert {
+	&.flex-vert, .flex-vert {
 		@include flex-direction_column;
 	}
 
-	.flex-1 {
+	&.flex-1, .flex-1 {
 		@include flex_110;
 	}
 
-	.all-center {
+	&.all-center, .all-center {
 		@include justify-content_center;
 		@include align-items_center;
 	}
 
-	.hidden {
+	&.hidden, .hidden {
 		display: none;
 	}
 
