@@ -208,13 +208,13 @@ html, body {
   .ad-content .panel.download .banner .image-wrapper .image {
     /* Capability css-boxshadow is prefixed with -moz because 0.16452% of users need it which is more than the threshold of 0.1%. */
     /* Creating new -moz context. */
-    -moz-box-shadow: 0 0 40px 40px #888;
+    -moz-box-shadow: 0 0 60px 20px #888;
     /* Capability css-boxshadow is not prefixed with -ms because 0% of users are affected which is less than the threshold of 0.1. */
     /* Capability css-boxshadow is not prefixed with -o because 0% of users are affected which is less than the threshold of 0.1. */
     /* Capability css-boxshadow is prefixed with -webkit because 1.6785% of users need it which is more than the threshold of 0.1%. */
     /* Creating new -webkit context. */
-    -webkit-box-shadow: 0 0 40px 40px #888;
-    box-shadow: 0 0 40px 40px #888;
+    -webkit-box-shadow: 0 0 60px 20px #888;
+    box-shadow: 0 0 60px 20px #888;
   }
 }
 .ad-content .panel.download .banner .image-wrapper .image-mirror {

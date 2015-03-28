@@ -1,5 +1,5 @@
 var adModule = (function () {
-	var content, header, closeBtn, spinner, imageWr, image, imageMirror,
+	var content, closeBtn, spinner, imageWr, image, imageMirror,
 		downloadBtn, likeBtn, dislikeBtn, stopBtn, shareBtn, baseData,
 		onElementsInitFinish;
 	var PORTRAIT = 'portrait';
@@ -86,7 +86,6 @@ var adModule = (function () {
 	function onImageLoad(event) {
 		sendGetRequest(baseData.ads[0].inbox_open);
 		addClass(spinner, 'hidden');
-		removeClass(header, 'hidden');
 		removeClass(imageWr, 'hidden');
 		recheckElements();
 	}
@@ -100,7 +99,6 @@ var adModule = (function () {
 	function initElements() {
 		content = document.querySelector('#ad-content');
 		var $get = content.querySelector.bind(content);
-		header = $get('.header');
 		closeBtn = $get('.btn.close');
 		spinner = $get('.spinner');
 		imageWr = $get('.image-wrapper');
