@@ -83,7 +83,7 @@ var adModule = (function () {
 		deferredRun(correctDownloadBtnWidthAndPosition, 30, 3);
 	}
 
-	function onImageLoad(event) {
+	function onImageLoad() {
 		sendGetRequest(baseData.ads[0].inbox_open);
 		addClass(spinner, 'hidden');
 		removeClass(imageWr, 'hidden');
