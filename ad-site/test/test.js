@@ -1,9 +1,6 @@
 var chai = require('chai'),
-	assert = chai.assert,
 	expect = chai.expect,
-	should = chai.should(),
 	jsdom = require('mocha-jsdom'),
-	app = require('../../index'),
 	adModule = require('../js/ad-module').adModule;
 
 

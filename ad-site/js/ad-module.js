@@ -3,7 +3,6 @@ var adModule = new function () {
 		downloadBtn, likeBtn, dislikeBtn, stopBtn, shareBtn, baseData,
 		onElementsInitFinish, t;
 	var PORTRAIT = 'portrait';
-	//var LANDSCAPE = 'landscape';
 	var BASE_URL = 'https://spherical-cow.herokuapp.com/data';
 	var isElementsInited = false;
 
