@@ -31,9 +31,13 @@ app.get('/data', function (request, response) {
 	response.send(JSON.stringify(getData()));
 });
 
-app.use('/images', express.static('images'));
+['/click', '/ad_like', '/ad_dislike', '/ad_hide', '/ad_share', '/inbox_open'].forEach(function(url){
+	app.get(url, function (request, response) {
+		response.sendStatus(200);
+	});
+});
 
-app.use('/service-img', express.static('service-img'));
+app.use('/images', express.static('images'));
 
 app.use('/app', express.static('ad-site'));
 
