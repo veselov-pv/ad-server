@@ -49,6 +49,7 @@ var adModule = new function () {
 		/**
 		 * Used for adding class name to HTMLElement class name list
 		 * @function adModule.addClass
+		 * @public
 		 * @param o {HTMLElement} The DOM element which class name will be extended
 		 * @param c {string} Class name. Will be added to DOM element class name
 		 */
@@ -61,6 +62,7 @@ var adModule = new function () {
 		/**
 		 * Used for removing class name from HTMLElement class name list
 		 * @function adModule.removeClass
+		 * @public
 		 * @param o {HTMLElement} The DOM element which class name will be shrink
 		 * @param c {string} Class name. Will be removed from DOM element class name
 		 */
@@ -71,6 +73,7 @@ var adModule = new function () {
 		/**
 		 * Used for validating of string by JSON format
 		 * @function adModule.isJsonString
+		 * @public
 		 * @param str {string}
 		 * @returns {boolean} true if validated like JSON
 		 */
@@ -85,6 +88,7 @@ var adModule = new function () {
 		/**
 		 * Used for deferred run of functions. For example: deferred run used for adModule.correctImageMirrorPosition for waiting finish of image position change
 		 * @function adModule.deferredRun
+		 * @public
 		 * @param callback {function} deferred function
 		 * @param delay {number} in ms
 		 * @param times {number} Several times for more smooth effect of watching
@@ -100,6 +104,7 @@ var adModule = new function () {
 		/**
 		 * Used for getting absolute offset position of HTML element
 		 * @function adModule.getSummaryOffset
+		 * @public
 		 * @param element {HTMLElement}
 		 * @returns {{top: number, left: number}}
 		 */
@@ -118,6 +123,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.checkImageDefiningSize
+		 * @public
 		 */
 		checkImageDefiningSize: function () {
 			if (!image.naturalHeight || !image.naturalWidth) return;
@@ -132,6 +138,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.correctImageMirrorPosition
+		 * @public
 		 */
 		correctImageMirrorPosition: function () {
 			imageMirror.style.top = image.offsetTop + image.offsetHeight + 'px';
@@ -139,6 +146,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.correctDownloadBtnWidthAndPosition
+		 * @public
 		 */
 		correctDownloadBtnWidthAndPosition: function () {
 			downloadBtn.style.width = image.clientWidth + 'px';
@@ -150,6 +158,7 @@ var adModule = new function () {
 		/**
 		 * Recheck some elements position and sizes after device orientation change
 		 * @function adModule.recheckElements
+		 * @public
 		 */
 		recheckElements: function () {
 			t.addClass(image, 'not-visible');
@@ -162,6 +171,7 @@ var adModule = new function () {
 		/**
 		 * Used for sending inbox_open GET request on image load finish
 		 * @function adModule.onImageLoad
+		 * @public
 		 */
 		onImageLoad: function () {
 			t.sendGetRequest(baseData.ads[0].inbox_open);
@@ -171,6 +181,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.getNewImage
+		 * @public
 		 */
 		getNewImage: function () {
 			image.src = baseData.ads[0].image_url;
@@ -179,6 +190,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.initElements
+		 * @public
 		 */
 		initElements: function () {
 			content = document.querySelector('#ad-content');
@@ -198,12 +210,14 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.onScreenOrientationChange
+		 * @public
 		 */
 		onScreenOrientationChange: function () {
 			t.recheckElements();
 		},
 		/**
 		 * @function adModule.initOrientationListener
+		 * @public
 		 */
 		initOrientationListener: function () {
 			var mql = window.matchMedia('(orientation: ' + PORTRAIT + ')');
@@ -211,6 +225,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.removeAllElements
+		 * @public
 		 */
 		removeAllElements: function () {
 			if (content) content.parentNode.removeChild(content);
@@ -218,12 +233,14 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.redirectToAdSite
+		 * @public
 		 */
 		redirectToAdSite: function () {
 			window.location.href = baseData.ads[0].click_url;
 		},
 		/**
 		 * @function adModule.initListeners
+		 * @public
 		 */
 		initListeners: function () {
 			t.initOrientationListener();
@@ -245,6 +262,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.sendGetRequest
+		 * @public
 		 * @param url
 		 * @param callback
 		 */
@@ -260,6 +278,7 @@ var adModule = new function () {
 		},
 		/**
 		 * @function adModule.sendInitialRequest
+		 * @public
 		 */
 		sendInitialRequest: function () {
 			t.sendGetRequest(BASE_URL, function (xhr) {
@@ -275,6 +294,7 @@ var adModule = new function () {
 		/**
 		 * Start function for external use
 		 * @function adModule.init
+		 * @public
 		 */
 		init: function () {
 			t = this;
