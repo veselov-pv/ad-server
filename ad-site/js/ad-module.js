@@ -83,10 +83,11 @@ var adModule = new function () {
 			return true;
 		},
 		/**
+		 * Used for deferred run of functions. For example: deferred run used for adModule.correctImageMirrorPosition for waiting finish of image position change
 		 * @function adModule.deferredRun
-		 * @param callback
-		 * @param delay
-		 * @param times
+		 * @param callback {function} deferred function
+		 * @param delay {number} in ms
+		 * @param times {number} Several times for more smooth effect of watching
 		 */
 		deferredRun: function (callback, delay, times) {
 			times -= 1;
@@ -97,8 +98,9 @@ var adModule = new function () {
 			}, delay);
 		},
 		/**
+		 * Used for getting absolute offset position of HTML element
 		 * @function adModule.getSummaryOffset
-		 * @param element
+		 * @param element {HTMLElement}
 		 * @returns {{top: number, left: number}}
 		 */
 		getSummaryOffset: function (element) {
@@ -146,6 +148,7 @@ var adModule = new function () {
 			t.removeClass(downloadBtn, 'not-visible');
 		},
 		/**
+		 * Recheck some elements position and sizes after device orientation change
 		 * @function adModule.recheckElements
 		 */
 		recheckElements: function () {
@@ -157,6 +160,7 @@ var adModule = new function () {
 			t.deferredRun(t.correctDownloadBtnWidthAndPosition, 30, 3);
 		},
 		/**
+		 * Used for sending inbox_open GET request on image load finish
 		 * @function adModule.onImageLoad
 		 */
 		onImageLoad: function () {
@@ -210,6 +214,7 @@ var adModule = new function () {
 		 */
 		removeAllElements: function () {
 			if (content) content.parentNode.removeChild(content);
+			adModule = undefined;
 		},
 		/**
 		 * @function adModule.redirectToAdSite
