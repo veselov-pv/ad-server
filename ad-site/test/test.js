@@ -128,46 +128,16 @@ describe('ad module', function () {
 
 	});
 
-	it('checkImageDefiningSize()', function () {
-
-		it('run without throw error', function () {
-			var fnWithAttr = function () {
-				adModule.checkImageDefiningSize();
-			};
-
-			expect(fnWithAttr).to.not.throw(Error);
-		});
-
+	describe('checkImageDefiningSize()', function () {
 	});
 
-	it('correctImageMirrorPosition()', function () {
-		it('run without throw error', function () {
-			var fnWithAttr = function () {
-				adModule.correctImageMirrorPosition();
-			};
-
-			expect(fnWithAttr).to.not.throw(Error);
-		});
+	describe('correctImageMirrorPosition()', function () {
 	});
 
-	it('correctDownloadBtnWidthAndPosition()', function () {
-		it('run without throw error', function () {
-			var fnWithAttr = function () {
-				adModule.correctDownloadBtnWidthAndPosition();
-			};
-
-			expect(fnWithAttr).to.not.throw(Error);
-		});
+	describe('correctDownloadBtnWidthAndPosition()', function () {
 	});
 
-	it('recheckElements()', function () {
-		it('run without throw error', function () {
-			var fnWithAttr = function () {
-				adModule.recheckElements();
-			};
-
-			expect(fnWithAttr).to.not.throw(Error);
-		});
+	describe('recheckElements()', function () {
 	});
 
 	it('onImageLoad()', function () {
